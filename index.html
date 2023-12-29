@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>you vs you</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background-position: center;
+      background-size: cover;
+      transition: 2s all;
+      width: 100vw;
+      overflow: hidden;
+      color:#fff;
+    }
+    #countdown {
+      font-size: 1rem;
+      display: flex;
+      text-align: center;
+     
+    }
+    #countdown > div{
+      margin-inline: 20px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <h1>it's you vs youuuu</h4>
+  <div id="countdown"></div>
+
+  <script>
+    // Set the date we're counting down to
+    const countDownDate = new Date("January 14, 2027 00:00:00").getTime();
+
+    // Update the countdown every 1 second
+    const x = setInterval(function() {
+
+      // Get the current date and time
+      const now = new Date().getTime();
+
+      // Calculate the remaining time
+      const distance = countDownDate - now;
+
+      // Calculaten years, months, weeks, days, hours, minutes, and seconds
+      const years = Math.floor(distance / (1000 * 60 * 60 * 24 * 365));
+      const months = Math.floor((distance % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30.44));
+      const weeks = Math.floor((distance % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24 * 7));
+      const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the countdown
+      document.getElementById("countdown").innerHTML = `
+      
+      <div class ="ind">
+        <h4>years</h4>
+      
+          <div class = "num">
+            <h2>${years}</h2>
+            </div>
+      </div>
+        <div class ="ind">
+          <h4>months</h4>
+      
+          <div class = "num">
+            <h2>${months}</h2>
+            </div>
+        </div>
+        <div class ="ind">
+          <h4>weeks</h4>
+      
+          <div class = "num">
+            <h2>${weeks}</h2>
+            </div>
+        </div>
+        <div class ="ind">
+          <h4>days</h4>
+      
+          <div class = "num">
+            <h2>${days}</h2>
+            </div>
+        </div>
+        <div class ="ind">
+          <h4>hours</h4>
+      
+          <div class = "num">
+            <h2>${hours}</h2>
+            </div>
+        </div>
+        <div class ="ind">
+          <h4>mintues</h4>
+      
+          <div class = "num">
+            <h2>${minutes}</h2>
+            </div>
+        </div>
+        <div class ="ind">
+          <h4>seconds</h4>
+      
+          <div class = "num">
+            <h2>${seconds}</h2>
+            </div>
+        </div>
+      
+      `;
+
+      // If the countdown is over, display a message
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+
+    let images = ["./steve1.jpg",'tim2.jpg',"./elon1.jpeg","tim1.jpg","elon2.jpg","./ali.jpg"]
+    let counter = -1
+    setInterval(()=>{
+
+      counter++
+      document.getElementsByTagName("body")[0].style.backgroundImage = `url(${images[counter]})`
+      if(counter >= images.length - 1){
+        counter=-1
+      }
+    },3000)
+    
+    
+      
+    
+ 
+    
+  </script>
+  <script src="./main.js"></script>
+</body>
+</html>
